@@ -1,7 +1,7 @@
 .. vim: syntax=rst
 
 按钮控件
-----
+=============
 
 emWin提供了三种按键式的控件，分别是：按钮（Button）、复选框（Checkbox）和单选按钮（Radio button）。本章我们先学习使用按钮控件。
 
