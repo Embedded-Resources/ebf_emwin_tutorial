@@ -8,14 +8,15 @@ emWin的获取
 
 我们使用的平台是野火STM32开发板，所以我们使用STemWin版本的库，在本教程中我们使用的STemWin为V5.44a版本。
 
-目前，ST官网中的STemWin版本停留在V5.32不再继续更新，ST已经将最新版本的STemWin放到了STM32 CUBE库中。STM32 CUBE库可以从官网或者STM32CubeMX软件中获得，也可以直接从野火F249挑战者V2的配套资料中得到。
+目前，ST官网中的STemWin版本停留在V5.32不再继续更新，ST已经将最新版本的STemWin放到了STM32 CUBE库中。
+STM32 CUBE库可以从官网或者STM32CubeMX软件中获得，也可以直接从野火F249挑战者V2的配套资料中得到。
 
 emWin目录结构
 ~~~~~~~~~~~~~~~~~
 
 解压下载得到的STM32 CUBE库后，进入到如下目录：
 
-** STM32Cube_FW_F4_V1.24.1\Middlewares\ST\STemWin **
+**STM32Cube_FW_F4_V1.24.1\\Middlewares\\ST\\STemWin**
 
 进入STemWin目录后见图 STemWin文件说明_ 。
 

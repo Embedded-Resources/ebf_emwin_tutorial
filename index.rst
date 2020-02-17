@@ -12,7 +12,6 @@
 
    README
    about_us
-   book/Foreword
    TODO
 
 .. toctree::
@@ -20,6 +19,7 @@
    :caption: emWin控件应用开发
    :numbered:
 
+   book/Foreword
    book/First_acquaintance
    book/File_structure
    book/simulation
