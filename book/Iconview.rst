@@ -156,7 +156,7 @@ ICONVIEW_CreateIndirect()
 
 5) cb：回调函数指针。
 
-此函数的第一个参数指向的是代码清单 15‑3的资源表结构，把结构中的para参数分为高16位和低16位，分别对应ySizeItem和xSizeItem。其中的Flags参数可选值与ICONVIEW_CreateEx()函数的ExFlags参数相同，用于设置是否启用滚动条。
+此函数的第一个参数指向的是 **代码清单:控件基础-3** 的资源表结构，把结构中的para参数分为高16位和低16位，分别对应ySizeItem和xSizeItem。其中的Flags参数可选值与ICONVIEW_CreateEx()函数的ExFlags参数相同，用于设置是否启用滚动条。
 
 图标制作
 ^^^^
