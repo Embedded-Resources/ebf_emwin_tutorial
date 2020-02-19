@@ -798,7 +798,7 @@ GUI_QR_GetInfo()
     :name: 代码清单:2D绘图-23
     :linenos:
 
-    void GUI_QR_GetInfo(GUI_HMEM hQR, GUI_QR_INFO \* pInfo);
+    void GUI_QR_GetInfo(GUI_HMEM hQR, GUI_QR_INFO *pInfo);
 
 1) hQR：
 二维码句柄；

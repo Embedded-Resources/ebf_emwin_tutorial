@@ -952,7 +952,7 @@ emWin把触摸设备、外接鼠标和指点杆等都归为指针输入设备(Po
 
 .. code-block:: c
     :caption: 代码清单:8080并口-16 LCD_X_Config函数（LCDConf_FlexColor.c文件）
-    :emphasize-lines: 34-42
+    :emphasize-lines: 30-38
     :name: 代码清单:8080并口-16
     :linenos:
 

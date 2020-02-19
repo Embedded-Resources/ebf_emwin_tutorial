@@ -198,7 +198,7 @@ UTF-8是目前Unicode字符集中使用得最广的编码方式，目前大部�
 
 .. code-block:: html
     :caption: 网页字符的编码方式UTF-8
-    :name: 代码清单:单选按钮-4
+    :name: 网页字符的编码方式UTF-8
     :linenos:
 
     <meta http-equiv=Content-Type content="text/html;charset=utf-8">

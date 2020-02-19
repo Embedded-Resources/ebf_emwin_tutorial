@@ -57,8 +57,8 @@ MULTIEDIT_CreateEx()
 在指定位置创建具有指定大小的多行文本控件。
 
 .. code-block:: c
-    :caption: 代码清单:对话框-1 函数原型
-    :name: 代码清单:对话框-1
+    :caption: 代码清单:多行文本-1 函数原型
+    :name: 代码清单:多行文本-1
     :linenos:
 
     MULTIEDIT_HANDLE MULTIEDIT_CreateEx(int x0, int y0, int xSize, int
@@ -112,8 +112,8 @@ MULTIEDIT_CreateIndirect()
 从对话框资源表中创建多行文本控件。
 
 .. code-block:: c
-    :caption: 代码清单:对话框-2 函数原型
-    :name: 代码清单:对话框-2
+    :caption: 代码清单:多行文本-2 函数原型
+    :name: 代码清单:多行文本-2
     :linenos:
 
     MULTIEDIT_HANDLE MULTIEDIT_CreateIndirect(const
@@ -155,8 +155,8 @@ MULTIEDIT_CreateIndirect()
 ^^^^^^^^^^^^
 
 .. code-block:: c
-    :caption: 代码清单:对话框-3 创建对话框（MultieditDLG.c文件）
-    :name: 代码清单:对话框-3
+    :caption: 代码清单:多行文本-3 创建对话框（MultieditDLG.c文件）
+    :name: 代码清单:多行文本-3
     :linenos:
 
     /* 控件ID */
@@ -187,10 +187,10 @@ MULTIEDIT_CreateIndirect()
     }
 
 
-在 代码清单:对话框-3_ 中我们定义了2个ID：一个框架窗口ID和一个多行文本控件ID。
+在 代码清单:多行文本-3_ 中我们定义了2个ID：一个框架窗口ID和一个多行文本控件ID。
 当然也可以使用emWin预定义好的多行文本控件ID号，但最多只有GUI_ID_MULTIEDIT0到GUI_ID_MULTIEDIT3，共4个ID可供使用。
 
-比较重要的是多行文本控件资源表的倒数第二个参数Para，即文本缓冲区大小。代码清单:对话框-3_ 中此参数值为0x0，
+比较重要的是多行文本控件资源表的倒数第二个参数Para，即文本缓冲区大小。代码清单:多行文本-3_ 中此参数值为0x0，
 这个值表示的并不是缓冲区大小为0，而是使用控件内部预设的默认值。不过官方手册上并没有说明默认值具体是多少，
 如果想自定义缓冲区大小可以使用相应的API函数进行设置。
 
@@ -198,8 +198,8 @@ MULTIEDIT_CreateIndirect()
 ^^^^^^^^^^^^^^^^
 
 .. code-block:: c
-    :caption: 代码清单:对话框-4 对话框回调函数（MultiEditDLG.c文件）
-    :name: 代码清单:对话框-4
+    :caption: 代码清单:多行文本-4 对话框回调函数（MultiEditDLG.c文件）
+    :name: 代码清单:多行文本-4
     :linenos:
 
     /**
@@ -270,7 +270,7 @@ MULTIEDIT_CreateIndirect()
 和其他控件一样，多行文本控件相关API函数几乎都是使用句柄来操作的，但在建立对话框资源表的时候并没有定义它的句柄，
 那就需要通过WM_GetDialogItem函数来自动建立并获取多行文本控件的句柄。
 
-成功获取到句柄后就可以对控件进一步设置。在 代码清单:对话框-4_ 中将多行文本控件设置为只读模式，
+成功获取到句柄后就可以对控件进一步设置。在 代码清单:多行文本-4_ 中将多行文本控件设置为只读模式，
 打开光标，设置文本和提示符缓冲区为500个字符，启用自动垂直滚动条。
 使用MULTIEDIT_SetBkColor函数和MULTIEDIT_SetTextColor函数分别设置控件背景颜色为黑色，
 字体颜色为绿色，这两个函数的由于在前面已经设置多行文本为只读模式了，所以在设置控件颜色的时候需要对应不同的模式，

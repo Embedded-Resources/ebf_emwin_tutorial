@@ -26,8 +26,8 @@ GUI_GIF_DrawSub()
 在当前窗口中的指定位置绘制gif文件的给定子图像，该文件已被加载到内存中。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-1 函数原型
-    :name: 代码清单:单选按钮-1
+    :caption: 代码清单:GIF-1 函数原型
+    :name: 代码清单:GIF-1
     :linenos:
 
     int GUI_GIF_DrawSub(const void *pGIF, U32 NumBytes, int x0, int y0,
@@ -56,8 +56,8 @@ GUI_GIF_DrawSubEx()
 在当前窗口的指定位置绘制gif文件的给定子图像，该文件不必加载到内存中。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-2 函数原型
-    :name: 代码清单:单选按钮-2
+    :caption: 代码清单:GIF-2 函数原型
+    :name: 代码清单:GIF-2
     :linenos:
 
     int GUI_GIF_DrawSubEx(GUI_GET_DATA_FUNC *pfGetData, void *p, int x0,
@@ -87,8 +87,8 @@ GUI_GIF_GetImageInfo()
 返回已加载到内存中的GIF文件的给定子图像的信息。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-3 函数原型
-    :name: 代码清单:单选按钮-3
+    :caption: 代码清单:GIF-3 函数原型
+    :name: 代码清单:GIF-3
     :linenos:
 
     int GUI_GIF_GetImageInfo(const void *pGIF, U32 NumBytes,
@@ -112,8 +112,8 @@ gif文件的字节数；
 此函数主要用来获取GIF动图的一些基本信息，其中子图象的显示时长在播放动图的时候很有用，如果显示时长为0，则使用默认的10ms长度。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-4 GUI_GIF_IMAGE_INFO结构原型
-    :name: 代码清单:单选按钮-4
+    :caption: 代码清单:GIF-4 GUI_GIF_IMAGE_INFO结构原型
+    :name: 代码清单:GIF-4
     :linenos:
 
     typedef struct {
@@ -146,8 +146,8 @@ GUI_GIF_GetInfo()
 返回一个信息结构，其中包含关于已加载到内存中的给定GIF文件中的子图像的大小和数量的信息。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-5 函数原型
-    :name: 代码清单:单选按钮-5
+    :caption: 代码清单:GIF-5 函数原型
+    :name: 代码清单:GIF-5
     :linenos:
 
     int GUI_GIF_GetInfo(const void *pGIF, U32 NumBytes, GUI_GIF_INFO
@@ -166,8 +166,8 @@ gif文件的字节数；
 返回值：获取成功返回0，获取失败返回非0。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-6 GUI_GIF_INFO结构原型
-    :name: 代码清单:单选按钮-6
+    :caption: 代码清单:GIF-6 GUI_GIF_INFO结构原型
+    :name: 代码清单:GIF-6
     :linenos:
 
     typedef struct {
@@ -201,8 +201,8 @@ GIF图片显示实验
 ''''''''''''''''''''''''''''''''''''
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-7 \_ShowGIFEx函数（MainTask.c文件）
-    :name: 代码清单:单选按钮-7
+    :caption: 代码清单:GIF-7 \_ShowGIFEx函数（MainTask.c文件）
+    :name: 代码清单:GIF-7
     :linenos:
 
     /**
@@ -246,15 +246,15 @@ GIF图片显示实验
     }
 
 
-如 代码清单:单选按钮-7_ 所示，从外部存储器中直接绘制GIF图片前必须先通过文件系统函数f_open函数打开GIF文件，
+如 代码清单:GIF-7_ 所示，从外部存储器中直接绘制GIF图片前必须先通过文件系统函数f_open函数打开GIF文件，
 图片打开成功后调用GUI_GIF_GetInfoEx函数获取GIF图片的X大小、Y大小和总帧数等信息，根据获取到的总帧数使用for循环绘制GIF子图象，
 循环体中GUI_GIF_GetImageInfoEx函数主要用来获取GIF每一帧的显示时间，GUI_GIF_DrawSubEx负责绘制GIIF图像，GUI_Delay负责长度执行每一帧显示时间的演示。
 
-GUI_GIF_DrawSubEx函数和直接绘制BMP一样，需要一个专门的数据读取函数才能绘制图片，见 代码清单:单选按钮-8_ 。
+GUI_GIF_DrawSubEx函数和直接绘制BMP一样，需要一个专门的数据读取函数才能绘制图片，见 代码清单:GIF-8_ 。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-8 \_GetData函数（MainTask.c文件）
-    :name: 代码清单:单选按钮-8
+    :caption: 代码清单:GIF-8 \_GetData函数（MainTask.c文件）
+    :name: 代码清单:GIF-8
     :linenos:
 
     /**
@@ -292,7 +292,7 @@ GUI_GIF_DrawSubEx函数和直接绘制BMP一样，需要一个专门的数据读
     }
 
 
-如 代码清单:单选按钮-8_ 所示，_GetData函数用于读取外部存储器中的图片数据，每调用一次就读取图片一整行的像素数据，
+如 代码清单:GIF-8_ 所示，_GetData函数用于读取外部存储器中的图片数据，每调用一次就读取图片一整行的像素数据，
 请确保数据缓冲区_acBuffer[]的大小足够装下一整行像素数据。_GetData函数将作为GUI_JPEG_DrawEx函数的其中一个参数使用，
 当emWin从外部存储器直接绘制图片时，这个读取函数必须要有。事实上显示GIF图片的_GetData函数与用来显示BMP和JPEG的是同一个函数。
 
@@ -301,8 +301,8 @@ GUI_GIF_DrawSubEx函数和直接绘制BMP一样，需要一个专门的数据读
 '''''''''''''''''''''''''''
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-9 \_ShowGIF函数（MainTask.c文件）
-    :name: 代码清单:单选按钮-9
+    :caption: 代码清单:GIF-9 \_ShowGIF函数（MainTask.c文件）
+    :name: 代码清单:GIF-9
     :linenos:
 
     /**
@@ -364,7 +364,7 @@ GUI_GIF_DrawSubEx函数和直接绘制BMP一样，需要一个专门的数据读
     }
 
 
-如 代码清单:单选按钮-9_ 所示，加载GIT图片到内存中并绘制的操作与从外部存储器中直接绘制的操作几乎是相同的，
+如 代码清单:GIF-9_ 所示，加载GIT图片到内存中并绘制的操作与从外部存储器中直接绘制的操作几乎是相同的，
 都是必须通过文件系统函数f_open函数打开图片文件，图片打开成功后调用GUI_GIF_GetInfoEx函数获取GIF图片的X大小、Y大小和总帧数等信息，
 根据获取到的总帧数使用for循环绘制GIF子图象，循环体中GUI_GIF_GetImageInfoEx函数主要用来获取GIF每一帧的显示时间，
 GUI_Delay负责长度执行每一帧显示时间的演示。不同的是绘制GIF子图象用的是GUI_GIF_DrawSub函数，不需要额外的数据读取函数。
@@ -373,11 +373,11 @@ GUI_Delay负责长度执行每一帧显示时间的演示。不同的是绘制GI
 MainTask函数
 ''''''''''''''''''
 
-本实验我们用两种GIF绘制方法绘制3张GIF图片，见 代码清单:单选按钮-10_ 。
+本实验我们用两种GIF绘制方法绘制3张GIF图片，见 代码清单:GIF-10_ 。
 
 .. code-block:: c
-    :caption: 代码清单:单选按钮-10 MainTask函数（MainTask.c文件）
-    :name: 代码清单:单选按钮-10
+    :caption: 代码清单:GIF-10 MainTask函数（MainTask.c文件）
+    :name: 代码清单:GIF-10
     :linenos:
 
     /**
@@ -420,7 +420,7 @@ MainTask函数
     }
 
 
-如 代码清单:单选按钮-10_ 所示，在while循环中调用ShowGIFEx、ShowGIF显示三张GIF图，
+如 代码清单:GIF-10_ 所示，在while循环中调用ShowGIFEx、ShowGIF显示三张GIF图，
 其中“dolphin.gif”分别被ShowGIFEx和ShowGIF各显示了一次，用来比较两种方式的显示效果。
 
 实验现象

@@ -144,7 +144,7 @@ GUI_SIF_DeleteFont()
     :name: 代码清单:SIF-2
     :linenos:
 
-    void GUI_SIF_DeleteFont(GUI_FONT \*pFont);
+    void GUI_SIF_DeleteFont(GUI_FONT *pFont);
 
 1) pFont：
 指向要删除的字体的指针。
