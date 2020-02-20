@@ -249,7 +249,7 @@ MainTask函数
         /* 向控件中添加新图标 */
         for (i = 0; i < GUI_COUNTOF(_abitmapItem); i++) {
             ICONVIEW_AddBitmapItem(hWin, _abitmapItem[i].pBitmap, _abitmapItem[i].pText);
-            ICONVIEW_SetTextColor(hWin, i, GUI_WHITE);
+            ICONVIEW_SetTextColor(hWin, ICONVIEW_CI_SEL, GUI_WHITE);
         }
         /* 设置初始选择的图标，-1表示不选中任何图标 */
         ICONVIEW_SetSel(hWin, -1);
